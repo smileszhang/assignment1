@@ -75,13 +75,19 @@
     
     }
    
-    else{
+    else if(indexPath.section ==1){
         cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionCell" forIndexPath:indexPath];
         
         
         // Configure the cell...
         cell.textLabel.text = @"collection";
-   
+    }
+    
+    else{
+    
+        cell = [tableView dequeueReusableCellWithIdentifier:@"buttonsViewCell" forIndexPath:indexPath];
+        
+        cell.textLabel.text = @"buttons";
     }
         
     
