@@ -20,7 +20,7 @@
 
 @implementation CollectionViewController
 
-@synthesize indexUse = _indexUse;
+//@synthesize indexUse = _indexUse;
 
 
 static NSString * const reuseIdentifier = @"ImageCollectionCell";
@@ -33,6 +33,7 @@ static NSString * const reuseIdentifier = @"ImageCollectionCell";
     return _myImageModel;
 }
 
+/*
 -(NSInteger)indexUse{
     
     if(!_indexUse)
@@ -40,6 +41,7 @@ static NSString * const reuseIdentifier = @"ImageCollectionCell";
     
     return _indexUse;
 }
+ */
 
 - (void)viewDidLoad {
     [super viewDidLoad];

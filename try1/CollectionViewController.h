@@ -10,5 +10,5 @@
 
 @interface CollectionViewController : UICollectionViewController
 
-@property (nonatomic, assign) NSInteger indexUse;
+//@property (nonatomic, assign) NSInteger indexUse;
 @end
