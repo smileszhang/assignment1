@@ -1,5 +1,5 @@
 //
-//  buttonsViewController.h
+//  buttonsViewControllerTableViewController.h
 //  try1
 //
 //  Created by air on 2017/9/4.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface buttonsViewController : UIViewController
-
+@interface buttonsViewControllerTableViewController : UITableViewController
 
 @end

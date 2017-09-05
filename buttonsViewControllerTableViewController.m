@@ -1,33 +1,18 @@
 //
-//  TableViewController.m
+//  buttonsViewControllerTableViewController.m
 //  try1
 //
-//  Created by smile on 2017/8/28.
+//  Created by air on 2017/9/4.
 //  Copyright © 2017年 smile. All rights reserved.
 //
 
-#import "TableViewController.h"
-#import "ImageModel.h"
-#import "ViewController.h"
+#import "buttonsViewControllerTableViewController.h"
 
-
-@interface TableViewController ()
-
-@property (strong,nonatomic) ImageModel* myImageModel;
-
+@interface buttonsViewControllerTableViewController ()
 
 @end
 
-@implementation TableViewController
-
--(ImageModel*)myImageModel{
-    
-    if(!_myImageModel)
-        _myImageModel = [ImageModel sharedInstance];
-    
-    return _myImageModel;
-}
-
+@implementation buttonsViewControllerTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,72 +24,32 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    //return the number of sections
-    return 3;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return the number of rows
-    if(section==0){
-        NSInteger ee=0;
-        return [self.myImageModel imageNum:ee] ;
-    }
-    
-    else
-        return 1;
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    if(indexPath.section==0){
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ImageNameCell" forIndexPath:indexPath];
-        
-        
-        
-        // Configure the cell...
-       
-        //cell.textLabel.text = self.myImageModel.imageNames[indexPath.row];
-        cell.textLabel.text = [self.myImageModel imageNameInteger:indexPath.row];
-        cell.detailTextLabel.text = @"More";
-    
-    }
-   
-    else if(indexPath.section ==1){
-        cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionCell" forIndexPath:indexPath];
-        
-        
-        // Configure the cell...
-        cell.textLabel.text = @"collection";
-    }
-    
-    else{
-    
-        cell = [tableView dequeueReusableCellWithIdentifier:@"buttonsViewCell" forIndexPath:indexPath];
-        
-        cell.textLabel.text = @"buttons";
-    }
-        
+    // Configure the cell...
     
     return cell;
 }
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    BOOL isVC = [[segue destinationViewController] isKindOfClass: [ViewController class]];
-    if (isVC) {
-        UITableViewCell* cell = (UITableViewCell*)sender;
-        ViewController *vc = [segue destinationViewController];
-        
-        vc.imageName = cell.textLabel.text;
-
-    }
-}
+*/
 
 /*
 // Override to support conditional editing of the table view.
