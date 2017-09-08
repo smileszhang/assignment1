@@ -78,8 +78,7 @@ static NSString * const reuseIdentifier = @"ImageCollectionCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSInteger ee=0;
-    return [self.myImageModel imageNum:ee];
+    return [self.myImageModel imageNum];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -90,6 +89,16 @@ static NSString * const reuseIdentifier = @"ImageCollectionCell";
     cell.imageView.image= [self.myImageModel imageImageInteger:indexPath.row];
     
     return cell;
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+        CollectionViewCell* cell = (CollectionViewCell*)sender;
+        ViewController *vc = [segue destinationViewController];
+
+        vc.indexUse=[self.collectionView indexPathForCell:cell].row;
+  
 }
 
 

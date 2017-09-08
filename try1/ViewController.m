@@ -20,13 +20,11 @@
 
 @property (strong,nonatomic) ImageModel* myImageModel;
 
-
 @end
 
 @implementation ViewController
 
 @synthesize indexUse = _indexUse;
-
 
 -(ImageModel*)myImageModel{
     
@@ -43,6 +41,8 @@
     
     return _imageName;
 }
+
+
 -(NSInteger)indexUse{
     
     if(!_indexUse)
@@ -51,10 +51,12 @@
     return _indexUse;
 }
 
+
 -(UIImageView*)imageView{
     
     if(!_imageView)
-        _imageView = [[UIImageView alloc] initWithImage:[[ImageModel sharedInstance] getImageWithName:_imageName]];
+        _imageView = [[UIImageView alloc] initWithImage:[[self myImageModel] imageImageInteger:_indexUse]];
+        //_imageView = [[UIImageView alloc] initWithImage:[[self myImageModel] getImageWithName:_imageName]];
         return _imageView;
 }
 

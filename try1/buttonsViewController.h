@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface buttonsViewController : UIViewController
+//@property (strong, nonatomic) IBOutlet UIView *baseView;
+
 
 
 @end

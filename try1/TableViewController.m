@@ -9,11 +9,18 @@
 #import "TableViewController.h"
 #import "ImageModel.h"
 #import "ViewController.h"
+#import "WebModel.h"
+#import "webviewcontroller.h"
+#import "pickerViewModel.h"
+#import "pickerViewController.h"
 
 
 @interface TableViewController ()
 
 @property (strong,nonatomic) ImageModel* myImageModel;
+@property (strong,nonatomic) pickerViewModel* mypickerViewModel;
+@property (strong,nonatomic) WebModel* myWebModel;
+
 
 
 @end
@@ -27,6 +34,23 @@
     
     return _myImageModel;
 }
+
+-(pickerViewModel*)mypickerViewModel{
+    
+    if(!_mypickerViewModel)
+        _mypickerViewModel = [pickerViewModel pickerInstance];
+    
+    return _mypickerViewModel;
+}
+
+-(WebModel*)myWebModel{
+    
+    if(!_myWebModel)
+        _myWebModel = [WebModel sharedInstance];
+    
+    return _myWebModel;
+}
+
 
 
 - (void)viewDidLoad {
@@ -44,15 +68,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     //return the number of sections
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //return the number of rows
     if(section==0){
-        NSInteger ee=0;
-        return [self.myImageModel imageNum:ee] ;
+        return [self.myImageModel imageNum] ;
     }
+    
+    else if(section==2){
+        return  [self.myWebModel webNum];
+    }
+    else if(section==3){
+        NSInteger i= [self.mypickerViewModel arrayNum];
+        return i;
+    }
+
     
     else
         return 1;
@@ -83,12 +115,22 @@
         cell.textLabel.text = @"collection";
     }
     
-    else{
+    else if(indexPath.section ==2){
     
-        cell = [tableView dequeueReusableCellWithIdentifier:@"buttonsViewCell" forIndexPath:indexPath];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"webViewCell" forIndexPath:indexPath];
         
-        cell.textLabel.text = @"buttons";
+        cell.textLabel.text = [self.myWebModel webLinksInteger:indexPath.row];
+
     }
+    
+    else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell" forIndexPath:indexPath];
+            
+            
+            // Configure the cell...
+        cell.textLabel.text = [self.mypickerViewModel arrayArrayInteger:indexPath.row];
+    }
+    
         
     
     return cell;
@@ -97,13 +139,32 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     BOOL isVC = [[segue destinationViewController] isKindOfClass: [ViewController class]];
+    BOOL isWC = [[segue destinationViewController] isKindOfClass:[webviewcontroller class]];
+    BOOL isPVC = [[segue destinationViewController] isKindOfClass: [pickerViewController class]];
+
     if (isVC) {
         UITableViewCell* cell = (UITableViewCell*)sender;
         ViewController *vc = [segue destinationViewController];
+    
+        vc.indexUse = [self.tableView indexPathForCell:cell].row;
         
-        vc.imageName = cell.textLabel.text;
-
     }
+    else if(isWC){
+        UITableViewCell* cell = (UITableViewCell*)sender;
+        webviewcontroller* wc = [segue destinationViewController];
+        wc.indexUseWeb=[self.tableView indexPathForCell:cell].row;
+    }
+
+    else if(isPVC){
+        
+        UITableViewCell* cell = (UITableViewCell*)sender;
+        pickerViewController *pvc = [segue destinationViewController];
+        
+        pvc.indexPicker = [self.tableView indexPathForCell:cell].row;
+    
+    }
+   
+    
 }
 
 /*

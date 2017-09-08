@@ -11,6 +11,10 @@
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic) NSString *imageName;
+//@property(strong, nonatomic) UIImageView* imageView;
+
+
+
 @property (nonatomic,assign) NSInteger indexUse;
 
 @end
