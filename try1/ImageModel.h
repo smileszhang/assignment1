@@ -12,10 +12,11 @@
 @interface ImageModel : NSObject
 
 +(ImageModel*) sharedInstance;
+-(NSMutableArray*)getimageNames;
 
 -(UIImage*)getImageWithName:(NSString*)name;
 -(NSString*)imageNameInteger:(NSInteger)integer;
 -(UIImage*)imageImageInteger:(NSInteger)integer;
--(NSInteger)imageNum:(NSInteger)str;
+-(NSInteger)imageNum;
 
 @end

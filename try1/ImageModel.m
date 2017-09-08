@@ -9,7 +9,7 @@
 #import "ImageModel.h"
 @interface NSObject ()
 
-@property (strong, nonatomic) NSArray* imageNames;
+@property (strong, nonatomic) NSMutableArray* imageNames;
 @property (strong, nonatomic) NSMutableArray* imageImage;
 
 @end
@@ -21,31 +21,41 @@
 
 
 
--(NSArray*)imageNames{
+
+-(NSMutableArray*)imageNames{
+    if(!_imageNames){
+        _imageNames = [[NSMutableArray alloc] initWithCapacity:4];
+        [_imageNames addObject:@"Eric1"];
+        [_imageNames addObject:@"Eric2"];
+        [_imageNames addObject:@"Eric3"];
+        [_imageNames addObject:@"SMU"];
+
+    }
     
-    if(!_imageNames)
-        _imageNames=@[@"Eric1",@"Eric2",@"Eric3",@"SMU"];
     return _imageNames;
 }
+
 
 -(NSMutableArray*)imageImage{
     
     if(!_imageImage){
-        _imageImage = [[NSMutableArray alloc] initWithCapacity:4];
+        _imageImage = [[NSMutableArray alloc] initWithCapacity:[self imageNum]];
+        for(int i=0; i<[self imageNum]; i++)
+        {
+            _imageImage[i]=[self getImageWithName:self.imageNames[i]];
+            
+        }
     }
+
+    
 /*
-    for(int i=0; i++; i<3)
-    {
-        _imageImage[i]=[self getImageWithName:self.imageNames[i]];
-        
-    }
- */
     _imageImage[0]=[self getImageWithName:self.imageNames[0]];
     _imageImage[1]=[self getImageWithName:self.imageNames[1]];
     _imageImage[2]=[self getImageWithName:self.imageNames[2]];
     _imageImage[3]=[self getImageWithName:self.imageNames[3]];
            //[[self.sharedInstance] getImageWithName:@"Eric1"];
         //@[@"Eric1",@"Eric2",@"Eric3"];
+*/
     return _imageImage;
 }
 
@@ -67,7 +77,7 @@
     UIImage* image = nil;
     
     image = [UIImage imageNamed:name];
-    
+   // image = [UIImage imageWithContentsOfFile:<#(nonnull NSString *)#>]
     return image;
 }
 
@@ -83,8 +93,14 @@
     
 }
 
--(NSInteger)imageNum:(NSInteger)str{
-    str=self.imageNames.count;
+-(NSMutableArray*)getimageNames{
+    [self.imageNames removeLastObject];
+    NSMutableArray* arr=self.imageNames;
+    return arr;
+}
+
+-(NSInteger)imageNum{
+    NSInteger str=self.imageNames.count;
     return str;
 }
 @end
