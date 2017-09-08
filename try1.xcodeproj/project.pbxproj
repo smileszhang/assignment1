@@ -10,6 +10,7 @@
 		4559A58C1F60BD3A00C02F93 /* pickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4559A58B1F60BD3A00C02F93 /* pickerViewController.m */; };
 		4559A58F1F60C4B700C02F93 /* pickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4559A58E1F60C4B700C02F93 /* pickerViewModel.m */; };
 		45A4670F1F5DB33500B93678 /* buttonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4670E1F5DB33500B93678 /* buttonsViewController.m */; };
+		45E2DD811F62F0DD00286368 /* WebModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E2DD801F62F0DD00286368 /* WebModel.m */; };
 		95515ABF1F54A8E8004FBBC7 /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95515ABE1F54A8E8004FBBC7 /* ImageModel.m */; };
 		95515AC21F54BEE2004FBBC7 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95515AC11F54BEE2004FBBC7 /* TableViewController.m */; };
 		95515AC51F54E834004FBBC7 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95515AC41F54E834004FBBC7 /* CollectionViewController.m */; };
@@ -23,7 +24,6 @@
 		95CBDE311F535F680098BCBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CBDE2F1F535F680098BCBC /* LaunchScreen.storyboard */; };
 		95CBDE3C1F535F680098BCBC /* try1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDE3B1F535F680098BCBC /* try1Tests.m */; };
 		95CBDE471F535F680098BCBC /* try1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDE461F535F680098BCBC /* try1UITests.m */; };
-		95EAED271F623FCF00E3DB90 /* WebModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EAED261F623FCF00E3DB90 /* WebModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,8 @@
 		4559A58E1F60C4B700C02F93 /* pickerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pickerViewModel.m; sourceTree = "<group>"; };
 		45A4670D1F5DB33500B93678 /* buttonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttonsViewController.h; sourceTree = "<group>"; };
 		45A4670E1F5DB33500B93678 /* buttonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buttonsViewController.m; sourceTree = "<group>"; };
+		45E2DD7F1F62F0DD00286368 /* WebModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebModel.h; sourceTree = "<group>"; };
+		45E2DD801F62F0DD00286368 /* WebModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebModel.m; sourceTree = "<group>"; };
 		95515ABD1F54A8E8004FBBC7 /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
 		95515ABE1F54A8E8004FBBC7 /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
 		95515AC01F54BEE2004FBBC7 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -76,8 +78,6 @@
 		95CBDE421F535F680098BCBC /* try1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = try1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CBDE461F535F680098BCBC /* try1UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = try1UITests.m; sourceTree = "<group>"; };
 		95CBDE481F535F680098BCBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95EAED261F623FCF00E3DB90 /* WebModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebModel.m; path = ../../try5/try1/WebModel.m; sourceTree = "<group>"; };
-		95EAED281F623FDA00E3DB90 /* WebModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WebModel.h; path = ../../try5/try1/WebModel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 				95CBDE2A1F535F680098BCBC /* Main.storyboard */,
 				4559A58A1F60BD3A00C02F93 /* pickerViewController.h */,
 				4559A58B1F60BD3A00C02F93 /* pickerViewController.m */,
-				95EAED281F623FDA00E3DB90 /* WebModel.h */,
-				95EAED261F623FCF00E3DB90 /* WebModel.m */,
+				45E2DD7F1F62F0DD00286368 /* WebModel.h */,
+				45E2DD801F62F0DD00286368 /* WebModel.m */,
 				95BFFC4C1F5F65F9009FED39 /* webviewcontroller.h */,
 				95BFFC4D1F5F65F9009FED39 /* webviewcontroller.m */,
 				45A4670D1F5DB33500B93678 /* buttonsViewController.h */,
@@ -252,6 +252,7 @@
 				TargetAttributes = {
 					95CBDE1D1F535F680098BCBC = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 2HGBWKMBZ4;
 						ProvisioningStyle = Automatic;
 					};
 					95CBDE361F535F680098BCBC = {
@@ -318,10 +319,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95EAED271F623FCF00E3DB90 /* WebModel.m in Sources */,
 				95BFFC4E1F5F65F9009FED39 /* webviewcontroller.m in Sources */,
 				45A4670F1F5DB33500B93678 /* buttonsViewController.m in Sources */,
 				95CBDE291F535F680098BCBC /* ViewController.m in Sources */,
+				45E2DD811F62F0DD00286368 /* WebModel.m in Sources */,
 				4559A58F1F60C4B700C02F93 /* pickerViewModel.m in Sources */,
 				95CBDE261F535F680098BCBC /* AppDelegate.m in Sources */,
 				95515AC51F54E834004FBBC7 /* CollectionViewController.m in Sources */,
@@ -478,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2HGBWKMBZ4;
 				INFOPLIST_FILE = try1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mobile.try1;
@@ -489,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2HGBWKMBZ4;
 				INFOPLIST_FILE = try1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mobile.try1;

@@ -12,7 +12,7 @@
 @interface buttonsViewController ()
 
 @property (strong,nonatomic) ImageModel* myImageModel;
-
+@property (nonatomic, weak) NSTimer *timer;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UISwitch *mySwitch;
@@ -29,6 +29,42 @@
 @implementation buttonsViewController
 
 @synthesize segmentControl;
+@synthesize timerLabel = _timerLabel;
+
+
+int i = 0;
+
+
+-(void)timerOn:(id)userinfo {
+    NSLog(@"Fire");
+    i++;
+    _timerLabel.text = [NSString stringWithFormat:@"Timer count: %d",i];
+}
+- (IBAction)startButtonPressed:(id)sender {
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                              target:self
+                                            selector:@selector(timerOn:)
+                                            userInfo:nil
+                                             repeats:YES];
+    [_timer fire];
+}
+
+- (IBAction)stopPressed:(id)sender {
+    
+    [_timer invalidate];
+    _timer = nil;
+    _timerLabel.text = [NSString stringWithFormat:@"Timer stoped: %d",i]; //@"Timer off";
+    
+}
+
+- (IBAction)moreButtonPressed:(id)sender {
+    
+    [_timer invalidate];
+    _timerLabel.text = @"Timer off";
+    
+}
+
 
 -(ImageModel*)myImageModel{
     

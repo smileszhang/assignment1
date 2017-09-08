@@ -50,7 +50,7 @@
 
     
     
-    UIPickerView* pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
+    UIPickerView* pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 415, 200)];
  
     [pickerView setDataSource:self];
     [pickerView setDelegate:self];

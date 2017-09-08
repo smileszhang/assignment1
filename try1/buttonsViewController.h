@@ -11,6 +11,7 @@
 @interface buttonsViewController : UIViewController
 //@property (strong, nonatomic) IBOutlet UIView *baseView;
 
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 
 @end
